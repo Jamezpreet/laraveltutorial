@@ -60,3 +60,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => 'admin'], f
     // working with form and get data
         Route::post('formdata',[FormController::class,'getData']);
         Route::view('login','FormData/form');
+
+
+    //global middleware
+        Route::view('noaccess','SimpleMiddleware\noaccess');
