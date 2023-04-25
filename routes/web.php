@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FormController;
 use App\Http\Controllers\LocaleController;
 use App\Http\Controllers\UserController;
 
@@ -54,3 +55,8 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => 'admin'], f
 // to call controller and define controller class]
     Route::get('usercontrollerindex/{username}',[UserController::class,'index']);
     Route::get('userloadview/{username}',[UserController::class,'userloadview']);
+
+
+    // working with form and get data
+        Route::post('formdata',[FormController::class,'getData']);
+        Route::view('login','FormData/form');
