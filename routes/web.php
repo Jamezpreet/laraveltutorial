@@ -80,3 +80,6 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => 'admin'], f
 
     // connection with database
         Route::get('product_list',[ProductController::class,'productList']);
+
+    // http client request
+        Route::get('clienthttp',[UserController::class,'sendDataToView']);

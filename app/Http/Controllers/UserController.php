@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Http;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -14,6 +15,12 @@ class UserController extends Controller
     public function userloadview($username)
     {
         return view('welcome2',['name' => $username]);
+    }
+
+    public function sendDataToView()
+    {
+        $url = Http::get('https://reqres.in/api/users?page=1');
+        return view('getdatafromhttp',['data'=>$url['data']]);
     }
     
 }
