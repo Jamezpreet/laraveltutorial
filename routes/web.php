@@ -73,3 +73,6 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => 'admin'], f
         Route::group(['middleware' => ['group_middleware']], function(){
             Route::view('grphome', 'GroupMiddleware/home');
         });
+
+    // route middleware
+        Route::view('rmiddleware' ,'routemiddleware')->middleware('route_middleware');
