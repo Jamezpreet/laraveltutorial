@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\FormController;
 use App\Http\Controllers\LocaleController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserController;
 
 /*
@@ -63,7 +64,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => 'admin'], f
 
 
     //global middleware
-        Route::view('noaccess','SimpleMiddleware\noaccess');
+        // Route::view('noaccess','SimpleMiddleware\noaccess');
 
 
     // group middleware
@@ -76,3 +77,6 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => 'admin'], f
 
     // route middleware
         Route::view('rmiddleware' ,'routemiddleware')->middleware('route_middleware');
+
+    // connection with database
+        Route::get('product_list',[ProductController::class,'productList']);
