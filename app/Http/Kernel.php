@@ -59,6 +59,8 @@ class Kernel extends HttpKernel
             'password.expires',
             'is_admin',
         ],
+
+        'group_middleware' => [\App\Http\Middleware\ageCheck::class,]
     ];
 
     /**

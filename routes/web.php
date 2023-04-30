@@ -64,3 +64,12 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => 'admin'], f
 
     //global middleware
         Route::view('noaccess','SimpleMiddleware\noaccess');
+
+
+    // group middleware
+
+        Route::view('groupnoaccess','noaccessmiddleware');// for global use
+
+        Route::group(['middleware' => ['group_middleware']], function(){
+            Route::view('grphome', 'GroupMiddleware/home');
+        });
