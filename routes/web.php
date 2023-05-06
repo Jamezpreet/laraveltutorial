@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FileUpload;
 use App\Http\Controllers\FormController;
 use App\Http\Controllers\LocaleController;
 use App\Http\Controllers\ProductController;
@@ -83,3 +84,10 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => 'admin'], f
 
     // http client request
         Route::get('clienthttp',[UserController::class,'sendDataToView']);
+
+    // file upload
+
+        Route::view('file_upload','FileUpload/upload');
+        Route::post('savefile',[FileUpload::class,'saveFile']);
+
+        
