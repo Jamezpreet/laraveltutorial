@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\FileUpload;
 use App\Http\Controllers\FormController;
+use App\Http\Controllers\GetDataWithQueryBuilder;
 use App\Http\Controllers\LocaleController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserController;
@@ -89,5 +90,8 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => 'admin'], f
 
         Route::view('file_upload','FileUpload/upload');
         Route::post('savefile',[FileUpload::class,'saveFile']);
+
+    // get records from db with the help of query builder
+        Route::get('get_query_builder_records',[GetDataWithQueryBuilder::class,'index']);
 
         
