@@ -11,4 +11,12 @@ class CustomController extends Controller
     {
        return json_decode(Accessor::all());
     }
+
+    public function setModifiedData()
+    {
+        $acc = new Accessor();
+        $acc->name = 'deepak';
+        $acc->address = 'nulll';
+        $acc->save();
+    }
 }

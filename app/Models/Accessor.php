@@ -19,4 +19,8 @@ class Accessor extends Model
         return "house no  ".$value."  ends ";
     }
 
+    public function setNameAttribute($value)
+    {
+        $this->attributes['name'] = "MR.".$value;
+    }
 }

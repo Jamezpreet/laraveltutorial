@@ -97,3 +97,6 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => 'admin'], f
 
     // jetstream tutorial starti with accessors
         Route::get('accessors',[CustomController::class,'getModifiedData']);
+    
+    // jetstream mutators
+        Route::get('mutators',[CustomController::class,'setModifiedData']);
