@@ -7,6 +7,7 @@ use App\Http\Controllers\GetDataWithQueryBuilder;
 use App\Http\Controllers\LocaleController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserController;
+use App\Mail\CustomMail;
 
 /*
  * Global Routes
@@ -103,3 +104,6 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => 'admin'], f
     
     // jetstream route model binding
         Route::get('routemodelbinding/{key:name}',[CustomController::class,'RouteModelBinding']);//http://localhost:1200/routemodelbinding/jaspreet
+    
+    // jetstream markdown mail
+        Route::get('markdownmail',[CustomMail::class,'build']);
