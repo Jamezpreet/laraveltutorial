@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CustomController;
 use App\Http\Controllers\FileUpload;
 use App\Http\Controllers\FormController;
 use App\Http\Controllers\GetDataWithQueryBuilder;
@@ -94,4 +95,5 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => 'admin'], f
     // get records from db with the help of query builder
         Route::get('get_query_builder_records',[GetDataWithQueryBuilder::class,'index']);
 
-        
+    // jetstream tutorial starti with accessors
+        Route::get('accessors',[CustomController::class,'getModifiedData']);
