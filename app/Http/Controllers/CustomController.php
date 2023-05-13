@@ -19,4 +19,9 @@ class CustomController extends Controller
         $acc->address = 'nulll';
         $acc->save();
     }
+
+    public function RouteModelBinding(Accessor $key)
+    {
+        return $key;
+    }
 }

@@ -100,3 +100,6 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => 'admin'], f
     
     // jetstream mutators
         Route::get('mutators',[CustomController::class,'setModifiedData']);
+    
+    // jetstream route model binding
+        Route::get('routemodelbinding/{key:name}',[CustomController::class,'RouteModelBinding']);//http://localhost:1200/routemodelbinding/jaspreet
